@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Hyperlinks Showcase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6366F1;
+            --primary-dark: #4F46E5;
+            --accent: #EC4899;
+            --light: #F9FAFB;
+            --dark: #111827;
+            --gray: #6B7280;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .back-button {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            padding: 0.6rem 1.2rem;
+            background: white;
+            color: var(--primary-dark);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .back-button:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Link Styles */
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        .link-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .link-container {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        /* Basic Link Styles */
+        .basic-link {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .basic-link:hover {
+            text-decoration: none;
+        }
+
+        /* Button Link */
+        .btn-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-link:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            color: white;
+        }
+
+        /* Social Media Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        .facebook { background: #1877F2; }
+        .twitter { background: #1DA1F2; }
+        .instagram { background: #E4405F; }
+        .linkedin { background: #0A66C2; }
+        .youtube { background: #FF0000; }
+
+        /* Image Link */
+        .image-link {
+            display: inline-block;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .image-link img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .image-link:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .image-link:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Animated Link */
+        .animated-link {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 3px;
+        }
+
+        .animated-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .animated-link:hover::after {
+            width: 100%;
+        }
+
+        /* Download Link */
+        .download-link {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem 1.2rem;
+            background: #f0f0f0;
+            border-radius: 6px;
+            color: var(--dark);
+        }
+
+        .download-link:hover {
+            background: #e0e0e0;
+        }
+
+        .download-link i {
+            color: var(--primary);
+        }
+
+        /* Email Link */
+        .email-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            background: rgba(236, 72, 153, 0.1);
+            border-radius: 6px;
+            color: var(--accent-dark);
+        }
+
+        .email-link:hover {
+            background: rgba(236, 72, 153, 0.2);
+        }
+
+        /* Code Blocks */
+        .code-block {
+            background: #1e1e1e;
+            color: #f8f8f8;
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 80px 0 30px;
+    text-align: center;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80') center/cover no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    display: inline-block;
+    background: linear-gradient(90deg, white, var(--primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.footer-text {
+    color: #9CA3AF;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.social-link {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+}
+
+.social-link:hover {
+    background: var(--primary);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
+}
+
+.footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #9CA3AF;
+    font-size: 0.9rem;
+}
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .link-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .back-button {
+                position: static;
+                margin-bottom: 1.5rem;
+                display: inline-flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Back to Main
+        </a>
+        <div class="container">
+            <h1><i class="fas fa-link"></i> Modern Hyperlinks Showcase</h1>
+            <p class="subtitle">Creative implementations of hyperlinks for modern web design</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2><i class="fas fa-info-circle"></i> About Hyperlinks</h2>
+            <p class="description">
+                Hyperlinks (<code>&lt;a&gt;</code> tags) are the foundation of web navigation. 
+                Modern CSS allows us to style them in creative ways while maintaining accessibility 
+                and functionality. Here are various implementations:
+            </p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-mouse-pointer"></i> Basic Link Styles</h2>
+            <p class="description">
+                Fundamental link styles that work well for body text and general navigation:
+            </p>
+            
+            <div class="link-showcase">
+                <div class="link-container">
+                    <h3>Standard Text Link</h3>
+                    <p>This is a <a href="#" class="basic-link">standard inline link</a> within paragraph text.</p>
+                    <p>Hover to see the underline animation.</p>
+                </div>
+                
+                <div class="link-container">
+                    <h3>Button Link</h3>
+                    <p>For important calls-to-action:</p>
+                    <a href="#" class="btn-link">Click Me</a>
+                    <p>Works well for primary actions like "Sign Up" or "Learn More".</p>
+                </div>
+                
+                <div class="link-container">
+                    <h3>Animated Underline</h3>
+                    <p>Hover this <a href="#" class="animated-link">beautiful link</a> to see the animation.</p>
+                    <p>The underline grows from left to right on hover.</p>
+                </div>
+            </div>
+            
+            <div class="code-block">
+/* CSS for Animated Underline Link */
+.animated-link {
+    position: relative;
+    display: inline-block;
+}
+
+.animated-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #EC4899;
+    transition: all 0.3s ease;
+}
+
+.animated-link:hover::after {
+    width: 100%;
+}
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-share-alt"></i> Social Media Links</h2>
+            <p class="description">
+                Social media links with platform-specific colors and hover effects:
+            </p>
+            
+            <div class="link-showcase">
+                <div class="link-container">
+                    <h3>Social Icons</h3>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" class="social-link facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="social-link twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="social-link instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="social-link linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="social-link youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p>Click any icon to visit the platform (opens in new tab).</p>
+                </div>
+                
+                <div class="link-container">
+                    <h3>Social Links with Text</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem;">
+                            <a href="https://facebook.com" target="_blank" style="display: flex; align-items: center; gap: 0.8rem;">
+                                <span class="social-link facebook" style="width: 40px; height: 40px; font-size: 1.2rem;">
+                                    <i class="fab fa-facebook-f"></i>
+                                </span>
+                                <span>Connect on Facebook</span>
+                            </a>
+                        </li>
+                        <li style="margin-bottom: 0.8rem;">
+                            <a href="https://twitter.com" target="_blank" style="display: flex; align-items: center; gap: 0.8rem;">
+                                <span class="social-link twitter" style="width: 40px; height: 40px; font-size: 1.2rem;">
+                                    <i class="fab fa-twitter"></i>
+                                </span>
+                                <span>Follow on Twitter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com" target="_blank" style="display: flex; align-items: center; gap: 0.8rem;">
+                                <span class="social-link instagram" style="width: 40px; height: 40px; font-size: 1.2rem;">
+                                    <i class="fab fa-instagram"></i>
+                                </span>
+                                <span>Follow on Instagram</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="code-block">
+/* CSS for Social Media Links */
+.social-link {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.facebook { background: #1877F2; }
+.twitter { background: #1DA1F2; }
+/* Additional platform colors */
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-paperclip"></i> Special Purpose Links</h2>
+            <p class="description">
+                Links designed for specific functions with appropriate visual cues:
+            </p>
+            
+            <div class="link-showcase">
+                <div class="link-container">
+                    <h3>Download Link</h3>
+                    <a href="#" class="download-link">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Download PDF Guide</span>
+                    </a>
+                    <p>Clearly indicates a file download action.</p>
+                </div>
+                
+                <div class="link-container">
+                    <h3>Email Link</h3>
+                    <a href="mailto:contact@example.com" class="email-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@example.com</span>
+                    </a>
+                    <p>Opens the user's default email client.</p>
+                </div>
+                
+                <div class="link-container">
+                    <h3>Image Link</h3>
+                    <a href="#" class="image-link">
+                        <img src="https://via.placeholder.com/300x200?text=Click+Me" alt="Example product">
+                    </a>
+                    <p>Hover to see the zoom effect.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-external-link-alt"></i> Link Best Practices</h2>
+            <div class="link-container" style="background: #f8f9fa; border-radius: 8px; padding: 1.5rem;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1rem; display: flex; gap: 0.8rem;">
+                        <i class="fas fa-check" style="color: var(--primary);"></i>
+                        <span>Always make link text descriptive (avoid "click here")</span>
+                    </li>
+                    <li style="margin-bottom: 1rem; display: flex; gap: 0.8rem;">
+                        <i class="fas fa-check" style="color: var(--primary);"></i>
+                        <span>Use <code>target="_blank"</code> for external links with appropriate warning</span>
+                    </li>
+                    <li style="margin-bottom: 1rem; display: flex; gap: 0.8rem;">
+                        <i class="fas fa-check" style="color: var(--primary);"></i>
+                        <span>Ensure color contrast meets accessibility standards</span>
+                    </li>
+                    <li style="display: flex; gap: 0.8rem;">
+                        <i class="fas fa-check" style="color: var(--primary);"></i>
+                        <span>Provide visual feedback on hover/focus</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <a href="#" class="footer-logo">DipeshSah</a>
+            <p class="footer-text">Building immersive experiences that don't just work—they sing, spark and stay memorable. Your vision + my tech sorcery = unstoppable!</p>
+            
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1FzbpcJvvT/?mibextid=qi2Omg" class="social-link"><i class="fab fa-facebook"></i></a>               
+                <a href="https://www.instagram.com/dipesh_shah_440?igsh=bGFkc3Zzc2E1Mzg3" class="social-link"><i class="fab fa-instagram"></i></a>  
+                <a href="https://x.com/Dipeshs5586193?s=09" class="social-link"><i class="fa-brands fa-twitter"></i></a>                             
+                <a href="https://github.com/Dipesh440" class="social-link">
+                    <i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/dipesh-sah-234b9b294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dipesh Sah. All rights reserved. | Designed with ♥ and code</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

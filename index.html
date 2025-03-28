@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dipesh Sah | Interactive Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-user-astronaut"></i>
+                <span>DipeshSah</span>
+            </a>
+            
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Biography</a></li>
+                    <li><a href="#family">Family</a></li>
+                    <li><a href="#hobbies">Hobbies</a></li>
+                    <li><a href="#labworks">Labworks</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div id="particles-js"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Hello, I'm <span>Dipesh Sah</span></h1>
+                <p class="hero-text">As a Grade 11 tech enthusiast, I turn coffee into clean code and ideas into interactive realities. This portfolio is my playground – where logic meets creativity, and every project tells a story. Welcome to my evolution!</p>
+                <div class="hero-actions">
+                    <a href="#about" class="btn">Explore My Story</a>
+                    <a href="#contact" class="btn btn-accent">Get In Touch</a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="hero-scroll">
+            <i class="fas fa-chevron-down"></i>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">My Biography</h2>
+            <p class="section-subtitle">From curious kid to passionate problem solver - my journey in tech and beyond</p>
+            
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="dipesh.jpg" alt="About Me">
+                </div>
+                
+                <div class="about-content">
+                    <p class="about-text">Born in Harsaha, Rautahat, I’m a tech enthusiast studying Computer Science at KMC, Lalitpur. Kotlin fuels my app development passion, while curiosity drives me to learn endlessly. Coding isn’t just a skill—it’s my creative playground.</p>
+                    <p class="about-text">When screens tire me, nature calls. Hiking trails and exploring the unknown recharge my spirit. I believe growth happens where logic meets adventure—whether debugging code or summiting hills. Life’s beauty lies in both algorithms and sunsets.</p>
+                    <p class="about-text">Technology’s rapid evolution excites me. I thrive on innovation, chasing “what’s next” in tech and beyond. Every challenge is a chance to grow. My mission? Code with purpose, explore fearlessly, and leave meaningful footprints.</p>
+                    
+                    <div class="personal-info">
+                        <div class="info-item">
+                            <span class="info-label">Name:</span>
+                            <span class="info-value">Dipesh Prasad Sah</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Age:</span>
+                            <span class="info-value">18 years</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Education:</span>
+                            <span class="info-value">Grade 11 </span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Occupation:</span>
+                            <span class="info-value">Student</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Location:</span>
+                            <span class="info-value">Harsaha, Rautahat</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email:</span>
+                            <span class="info-value">shahdipesh220@gmail.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skills">
+                        <h3>My Skills</h3>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Kotlin</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Java</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>C / C++</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Python</span>
+                                <span>50%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 50%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Family Section -->
+    <section class="section family" id="family">
+        <div class="container">
+            <h2 class="section-title">My Family</h2>
+            <p class="section-subtitle">The incredible people who shaped who I am today</p>
+            
+            <div class="family-members">
+                <div class="member-card">
+                    <div class="member-image">
+                        <img src="father.jpg" alt="Ram Prasad Sah">
+                    </div>
+
+                    <div class="member-info">
+                        <h3 class="member-name">Ram Prasad Sah</h3>
+                        <span class="member-relation">Father</span>
+                        <p class="member-bio">A government teacher and tech enthusiast, combines wisdom with modernity. His constant guidance and support fuel my growth. I'm profoundly grateful for his inspiring presence in my life.</p>
+                    </div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-image">
+                        <img src="mother.jpg" alt="Priyanka Devi">
+                    </div>
+
+                    <div class="member-info">
+                        <h3 class="member-name">Priyanka Devi</h3>
+                        <span class="member-relation">Mother</span>
+                        <p class="member-bio">A teacher, fills our home with warmth and tasty meals. Her support and encouragement inspire me daily. I'm grateful to have such a caring guide in my life.</p>
+                    </div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-image">
+                        <img src="sister.jpg" alt="Sneha Kumari Sah">
+                    </div>
+
+                    <div class="member-info">
+                        <h3 class="member-name">Sneha Kumari Sah</h3>
+                        <span class="member-relation">Sister</span>
+                        <p class="member-bio">A Grade 12 Biology student at KMC, is smart, funny, and kind. Her talent in drawing and cooking adds joy to our days, making life more colorful and fun.</p>
+                    </div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-image">
+                        <img src="brother.jpg" alt="Diwash Prasad Sah">
+                    </div>
+
+                    <div class="member-info">
+                        <h3 class="member-name">Diwash Prasad Sah</h3>
+                        <span class="member-relation">Brother</span>
+                        <p class="member-bio">My bright little brother, a lively Grade 5 student, fills our home with laughter. His passions range from mobile gaming (Free Fire, PUBG) to cricket matches in our backyard.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Hobbies Section -->
+    <section class="section hobbies" id="hobbies">
+        <div class="container">
+            <h2 class="section-title">My Hobbies</h2>
+            <p class="section-subtitle">What keeps me inspired and energized outside of work</p>
+            
+            <div class="hobbies-container">
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="hobby-title">Coding</h3>
+                    <p class="hobby-text">Crafting clean, efficient code is my passion. I build applications in Kotlin while exploring AI and Android development. Constantly learning, always creating</p>
+
+                </div>
+                
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+                    <h3 class="hobby-title">Exercising</h3>
+                    <p class="hobby-text">Sunrise runner and push-up enthusiast. My daily movement practice fuels both body and mind—transforming discipline into joyful energy</p>
+                </div>
+                
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="hobby-title">Reading Philosophy</h3>
+                    <p class="hobby-text">Particularly interested in Stoicism and its applications to modern life and technology ethics.</p>
+                </div>
+                
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-camera-retro"></i>
+                    </div>
+                    <h3 class="hobby-title">Nature Photography</h3>
+                    <p class="hobby-text">Capturing golden light in the wild with my Realmex7 Max, preserving Earth's raw beauty in fleeting moments.</p>
+                </div>
+
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3 class="hobby-title">Mountain Trekking</h3>
+                    <p class="hobby-text">Exploring the Pacific Northwest's trails keeps me grounded. Completed the Wonderland Trail around Mount Rainier last summer.</p>
+                </div>                
+                
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fa-solid fa-person-rifle"></i>
+                    </div>
+                    <h3 class="hobby-title">Competitive PUBG</h3>
+                    <p class="hobby-text">Top-tier mobile strategist. Battle-tested in squad leadership and tactical positioning – skills that sharpen real-world decision-making under pressure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Labworks Section -->
+    <section class="section labworks" id="labworks">
+        <div class="container">
+            <h2 class="section-title">Labworks</h2>
+            <p class="section-subtitle">Academic projects, experiments, and technical demonstrations</p>
+            
+            <div class="labwork-item">
+                <h3 class="labwork-title">Interactive Marquee</h3>
+                <div class="marquee-container">
+                    <div class="marquee">
+                        ✨ Welcome to my digital playground—where code meets creativity! Dive into my tech journey through projects that spark innovation, and join the adventure as I build, break, and reinvent. Catch the magic live on Twitter @dipeshs5586193—let’s geek out together! 🚀🔥
+                    </div>
+                </div>
+            </div>
+            
+            <div class="labwork-item">
+                <h3 class="labwork-title">Academic Journey (SLC)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subjects</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>English</td>
+                            <td>A+</td>
+                        </tr>
+                        <tr>
+                            <td>Nepali</td>
+                            <td>B+</td>
+                        </tr>
+                        <tr>
+                            <td>C.Mathematics</td>
+                            <td>B+</td>
+                        </tr>
+                        <tr>
+                            <td>Science</td>
+                            <td>A+</td>
+                        </tr>
+                        <tr>
+                            <td>Social Studies</td>
+                            <td>B+</td>
+                        </tr>
+                        <tr>
+                            <td>Health, Pop</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>O.Math</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>Computer Science</td>
+                            <td>A+</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="labwork-item">
+                <h3 class="labwork-title">Learning Resources</h3>
+                <div class="list-container">
+                    <div class="bullet-list">
+                        <h4>Recommended Books (Unordered List)</h4>
+                        <ul>
+                            <li>"Clean Code" by Robert C. Martin</li>
+                            <li>"Designing Data-Intensive Applications" by Martin Kleppmann</li>
+                            <li>"The Pragmatic Programmer" by Andrew Hunt</li>
+                            <li>"Structure and Interpretation of Computer Programs" by Harold Abelson</li>
+                            <li>"Deep Work" by Cal Newport</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="numbered-list">
+                        <h4>My Learning Process (Ordered List)</h4>
+                        <ol>
+                            <li>Identify a specific problem or concept to master</li>
+                            <li>Gather resources from diverse perspectives</li>
+                            <li>Build a small prototype or implementation</li>
+                            <li>Document learnings in my technical blog</li>
+                            <li>Teach the concept to someone else</li>
+                            <li>Iterate and refine understanding</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="labwork-item">
+                <h3 class="labwork-title">Technical Links</h3>
+                <div class="hyperlinks">
+                    <div class="hyperlink-item">
+                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                    <div class="hyperlink-item">
+                        <a href="https://codepen.io" target="_blank"><i class="fab fa-codepen"></i> CodePen</a>
+                    </div>
+                    <div class="hyperlink-item">
+                        <a href="https://dev.to" target="_blank"><i class="fab fa-dev"></i> Dev Blog</a>
+                    </div>
+                    <div class="hyperlink-item">
+                        <a href="https://stackoverflow.com" target="_blank"><i class="fab fa-stack-overflow"></i> Stack Overflow</a>
+                    </div>
+                    <div class="hyperlink-item">
+                        <a href="https://leetcode.com" target="_blank"><i class="fas fa-code"></i> LeetCode</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="labwork-item">
+                <h3 class="labwork-title">Project Gallery</h3>
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <a href="heading_index.html">
+                        <img src="heading_img.jpg" alt="Heading">
+                        </a>
+                        <div class="gallery-caption">Heading</div>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="list_index.html">
+                        <img src="list_img3.jpg" alt="List"> </a>
+                        <div class="gallery-caption">List</div>
+                    </div>  
+                    <div class="gallery-item">
+                        <a href="hyperlink_index.html">
+                        <img src="hyperlink_img.jpg" alt="Hyperlink"> </a>
+                        <div class="gallery-caption">Hyperlink</div>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="marquee_index.html">
+                        <img src="marquee_img.jpg" alt="Marquee"> </a>
+                        <div class="gallery-caption">Marquee</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Have a project in mind or want to collaborate? I'd love to hear from you!</p>
+            
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Dipesh Sah" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="dipesh@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" id="subject" class="form-control" placeholder="Project Inquiry" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" class="form-control" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <a href="#" class="footer-logo">DipeshSah</a>
+            <p class="footer-text">Building immersive experiences that don't just work—they sing, spark and stay memorable. Your vision + my tech sorcery = unstoppable!</p>
+            
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1FzbpcJvvT/?mibextid=qi2Omg" class="social-link"><i class="fab fa-facebook"></i></a>               
+                <a href="https://www.instagram.com/dipesh_shah_440?igsh=bGFkc3Zzc2E1Mzg3" class="social-link"><i class="fab fa-instagram"></i></a>  
+                <a href="https://x.com/Dipeshs5586193?s=09" class="social-link"><i class="fa-brands fa-twitter"></i></a>                             
+                <a href="https://github.com/Dipesh440" class="social-link">
+                    <i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/dipesh-sah-234b9b294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dipesh Sah. All rights reserved. | Designed with ♥ and code</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

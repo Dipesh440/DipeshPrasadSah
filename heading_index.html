@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Headings Showcase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6366F1;
+            --primary-dark: #4F46E5;
+            --accent: #EC4899;
+            --light: #F9FAFB;
+            --dark: #111827;
+            --gray: #6B7280;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 3rem 0 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            padding: 0.6rem 1.2rem;
+            background: white;
+            color: var(--primary-dark);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .back-button:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Heading Styles */
+        .heading-showcase {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .heading-example {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .heading-example:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .heading-tag {
+            display: inline-block;
+            background: var(--dark);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Creative Heading Styles */
+        .gradient-heading {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .underline-heading {
+            display: inline-block;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .underline-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .icon-heading {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .icon-heading i {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        /* Code Blocks */
+        .code-block {
+            background: #1e1e1e;
+            color: #f8f8f8;
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+
+        /* Best Practices */
+        .best-practices {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .practice-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .practice-card h3 {
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 80px 0 30px;
+    text-align: center;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80') center/cover no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    display: inline-block;
+    background: linear-gradient(90deg, white, var(--primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.footer-text {
+    color: #9CA3AF;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.social-link {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+}
+
+.social-link:hover {
+    background: var(--primary);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
+}
+
+.footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #9CA3AF;
+    font-size: 0.9rem;
+}
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+
+            .back-button {
+                position: static;
+                margin-bottom: 1.5rem;
+                display: inline-flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Back to Main
+        </a>
+        <div class="container">
+            <h1><i class="fas fa-heading"></i> Modern Headings Showcase</h1>
+            <p class="subtitle">Proper use of HTML heading elements (H1-H6) for content structure and hierarchy</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2><i class="fas fa-info-circle"></i> About HTML Headings</h2>
+            <p class="description">
+                Headings (H1-H6) are essential for organizing content and establishing hierarchy. 
+                They help users and search engines understand your page structure and improve accessibility.
+            </p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-list-ol"></i> Standard Heading Levels</h2>
+            <p class="description">
+                HTML provides six levels of headings, from H1 (most important) to H6 (least important):
+            </p>
+            
+            <div class="heading-showcase">
+                <div class="heading-example">
+                    <div class="heading-tag">&lt;h1&gt;</div>
+                    <h1 style="margin: 0;">Main Page Title (H1)</h1>
+                    <p style="color: var(--gray); margin-top: 0.5rem; font-size: 0.9rem;">Used once per page as the primary title</p>
+                </div>
+                
+                <div class="heading-example">
+                    <div class="heading-tag">&lt;h2&gt;</div>
+                    <h2 style="margin: 0; font-size: 1.8rem;">Section Heading (H2)</h2>
+                    <p style="color: var(--gray); margin-top: 0.5rem; font-size: 0.9rem;">Major section titles</p>
+                </div>
+                
+                <div class="heading-example">
+                    <div class="heading-tag">&lt;h3&gt;</div>
+                    <h3 style="margin: 0; font-size: 1.5rem;">Subsection (H3)</h3>
+                    <p style="color: var(--gray); margin-top: 0.5rem; font-size: 0.9rem;">Sub-sections under H2</p>
+                </div>
+                
+                <div class="heading-example">
+                    <div class="heading-tag">&lt;h4&gt;</div>
+                    <h4 style="margin: 0; font-size: 1.3rem;">Minor Heading (H4)</h4>
+                    <p style="color: var(--gray); margin-top: 0.5rem; font-size: 0.9rem;">Further subdivisions</p>
+                </div>
+                
+                <div class="heading-example">
+                    <div class="heading-tag">&lt;h5&gt;</div>
+                    <h5 style="margin: 0; font-size: 1.1rem;">Small Heading (H5)</h5>
+                    <p style="color: var(--gray); margin-top: 0.5rem; font-size: 0.9rem;">Rarely used - for minor points</p>
+                </div>
+                
+                <div class="heading-example">
+                    <div class="heading-tag">&lt;h6&gt;</div>
+                    <h6 style="margin: 0; font-size: 1rem;">Smallest Heading (H6)</h6>
+                    <p style="color: var(--gray); margin-top: 0.5rem; font-size: 0.9rem;">Least important headings</p>
+                </div>
+            </div>
+            
+            <div class="code-block">
+&lt;!-- HTML Heading Structure Example --&gt;
+&lt;h1&gt;Main Page Title&lt;/h1&gt;
+&lt;h2&gt;Section Heading&lt;/h2&gt;
+&lt;h3&gt;Subsection Title&lt;/h3&gt;
+&lt;h4&gt;Minor Heading&lt;/h4&gt;
+&lt;h5&gt;Small Heading&lt;/h5&gt;
+&lt;h6&gt;Smallest Heading&lt;/h6&gt;
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-paint-brush"></i> Creative Heading Styles</h2>
+            <p class="description">
+                While maintaining semantic structure, you can style headings creatively:
+            </p>
+            
+            <div class="heading-showcase">
+                <div class="heading-example">
+                    <h2 class="gradient-heading">Gradient Text Heading</h2>
+                    <p style="color: var(--gray); margin-top: 0.5rem; font-size: 0.9rem;">Using CSS linear-gradient</p>
+                </div>
+                
+                <div class="heading-example">
+                    <h2 class="underline-heading">Underline Heading</h2>
+                    <p style="color: var(--gray); margin-top: 0.5rem; font-size: 0.9rem;">Custom underline effect</p>
+                </div>
+                
+                <div class="heading-example">
+                    <h2 class="icon-heading">
+                        <i class="fas fa-star"></i>
+                        <span>Icon Heading</span>
+                    </h2>
+                    <p style="color: var(--gray); margin-top: 0.5rem; font-size: 0.9rem;">Heading with decorative icon</p>
+                </div>
+            </div>
+            
+            <div class="code-block">
+/* CSS for Gradient Heading */
+.gradient-heading {
+    background: linear-gradient(135deg, #6366F1, #EC4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* CSS for Underline Heading */
+.underline-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #EC4899;
+}
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-check-circle"></i> Heading Best Practices</h2>
+            <p class="description">
+                Follow these guidelines for effective heading structure:
+            </p>
+            
+            <div class="best-practices">
+                <div class="practice-card">
+                    <h3>Hierarchy Matters</h3>
+                    <p>Always maintain proper heading order (H1 → H2 → H3, etc.). Never skip levels.</p>
+                </div>
+                
+                <div class="practice-card">
+                    <h3>One H1 Per Page</h3>
+                    <p>Use only one H1 heading per page, representing the main content title.</p>
+                </div>
+                
+                <div class="practice-card">
+                    <h3>Meaningful Content</h3>
+                    <p>Make headings descriptive and concise. Avoid generic text like "Introduction".</p>
+                </div>
+                
+                <div class="practice-card">
+                    <h3>Accessibility First</h3>
+                    <p>Ensure proper color contrast and use semantic HTML rather than styling regular text as headings.</p>
+                </div>
+                
+                <div class="practice-card">
+                    <h3>SEO Considerations</h3>
+                    <p>Include relevant keywords in headings, but prioritize readability over SEO tricks.</p>
+                </div>
+                
+                <div class="practice-card">
+                    <h3>Mobile Responsiveness</h3>
+                    <p>Adjust heading sizes for different screen sizes to maintain hierarchy.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-code"></i> Semantic HTML Example</h2>
+            <p class="description">
+                Proper heading structure for a blog post example:
+            </p>
+            
+            <div class="code-block">
+&lt;!-- Semantic Heading Structure Example --&gt;
+&lt;h1&gt;The Complete Guide to Sustainable Gardening&lt;/h1&gt;
+
+&lt;h2&gt;Introduction to Sustainable Practices&lt;/h2&gt;
+
+&lt;h2&gt;Choosing the Right Plants&lt;/h2&gt;
+&lt;h3&gt;Native Species&lt;/h3&gt;
+&lt;h3&gt;Drought-Resistant Varieties&lt;/h3&gt;
+
+&lt;h2&gt;Water Conservation Techniques&lt;/h2&gt;
+&lt;h3&gt;Rainwater Harvesting&lt;/h3&gt;
+&lt;h4&gt;Barrel Systems&lt;/h4&gt;
+&lt;h4&gt;Underground Cisterns&lt;/h4&gt;
+&lt;h3&gt;Drip Irrigation&lt;/h3&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <a href="#" class="footer-logo">DipeshSah</a>
+            <p class="footer-text">Building immersive experiences that don't just work—they sing, spark and stay memorable. Your vision + my tech sorcery = unstoppable!</p>
+            
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1FzbpcJvvT/?mibextid=qi2Omg" class="social-link"><i class="fab fa-facebook"></i></a>               
+                <a href="https://www.instagram.com/dipesh_shah_440?igsh=bGFkc3Zzc2E1Mzg3" class="social-link"><i class="fab fa-instagram"></i></a>  
+                <a href="https://x.com/Dipeshs5586193?s=09" class="social-link"><i class="fa-brands fa-twitter"></i></a>                             
+                <a href="https://github.com/Dipesh440" class="social-link">
+                    <i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/dipesh-sah-234b9b294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dipesh Sah. All rights reserved. | Designed with ♥ and code</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

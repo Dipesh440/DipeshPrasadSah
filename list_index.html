@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Lists Showcase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6366F1;
+            --primary-dark: #4F46E5;
+            --accent: #EC4899;
+            --light: #F9FAFB;
+            --dark: #111827;
+            --gray: #6B7280;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .back-button {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            padding: 0.6rem 1.2rem;
+            background: white;
+            color: var(--primary-dark);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .back-button:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* List Styles */
+        .list-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .list-container {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        /* Basic List Styles */
+        ul.basic, ol.basic {
+            padding-left: 1.5rem;
+        }
+
+        ul.basic li, ol.basic li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Icon List */
+        ul.icon-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.icon-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        ul.icon-list li:hover {
+            background: rgba(99, 102, 241, 0.1);
+            transform: translateX(5px);
+        }
+
+        ul.icon-list i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            width: 1.5rem;
+            text-align: center;
+        }
+
+        /* Image List */
+        ul.image-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.image-list li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        ul.image-list img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+        }
+
+        /* Numbered Card List */
+        ol.numbered-cards {
+            list-style: none;
+            padding: 0;
+            counter-reset: numbered-cards;
+        }
+
+        ol.numbered-cards li {
+            counter-increment: numbered-cards;
+            position: relative;
+            padding-left: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        ol.numbered-cards li::before {
+            content: counter(numbered-cards);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Timeline List */
+        ul.timeline {
+            list-style: none;
+            padding: 0;
+            position: relative;
+        }
+
+        ul.timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 1rem;
+            width: 2px;
+            background: var(--primary);
+            opacity: 0.2;
+        }
+
+        ul.timeline li {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        ul.timeline li::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0.3rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .timeline-date {
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        /* Checkbox List */
+        ul.checkbox-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.checkbox-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        ul.checkbox-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* Code Blocks */
+        .code-block {
+            background: #1e1e1e;
+            color: #f8f8f8;
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+
+        /* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 80px 0 30px;
+    text-align: center;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80') center/cover no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    display: inline-block;
+    background: linear-gradient(90deg, white, var(--primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.footer-text {
+    color: #9CA3AF;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.social-link {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+}
+
+.social-link:hover {
+    background: var(--primary);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
+}
+
+.footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #9CA3AF;
+    font-size: 0.9rem;
+}
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .list-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .back-button {
+                position: static;
+                margin-bottom: 1.5rem;
+                display: inline-flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        Back to Main
+    </a>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-list"></i> Modern Lists Showcase</h1>
+            <p class="subtitle">Creative implementations of ordered and unordered lists for modern web design</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2><i class="fas fa-info-circle"></i> About Lists</h2>
+            <p class="description">
+                Lists are fundamental HTML elements that can be styled in countless creative ways. 
+                Beyond basic bullet points and numbers, modern CSS allows us to create visually appealing 
+                and functional list designs that enhance user experience.
+            </p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-circle"></i> Unordered List Variations</h2>
+            <p class="description">
+                Unordered lists (<code>&lt;ul&gt;</code>) typically display items with bullet points, 
+                but we can customize them in many ways:
+            </p>
+            
+            <div class="list-showcase">
+                <div class="list-container">
+                    <h3>Basic Bullet List</h3>
+                    <ul class="basic">
+                        <li>Standard bullet points</li>
+                        <li>Simple and clean</li>
+                        <li>Good for basic content</li>
+                        <li>Works in all browsers</li>
+                    </ul>
+                </div>
+                
+                <div class="list-container">
+                    <h3>Icon List</h3>
+                    <ul class="icon-list">
+                        <li><i class="fas fa-check"></i> Tasks completed</li>
+                        <li><i class="fas fa-star"></i> Featured items</li>
+                        <li><i class="fas fa-bell"></i> Important notices</li>
+                        <li><i class="fas fa-heart"></i> Favorite things</li>
+                    </ul>
+                </div>
+                
+                <div class="list-container">
+                    <h3>Image List</h3>
+                    <ul class="image-list">
+                        <li>
+                            <img src="fruits_img.png" alt="User 1">
+                            <span>Apple</span>
+                        </li>
+                        <li>
+                            <img src="fruits_img.png" alt="User 2">
+                            <span>Mango</span>
+                        </li>
+                        <li>
+                            <img src="fruits_img.png" alt="User 3">
+                            <span>Grapes</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="code-block">
+/* CSS for Icon List */
+ul.icon-list {
+    list-style: none;
+    padding: 0;
+}
+
+ul.icon-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+ul.icon-list i {
+    color: #6366F1;
+    font-size: 1.2rem;
+}
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-list-ol"></i> Ordered List Variations</h2>
+            <p class="description">
+                Ordered lists (<code>&lt;ol&gt;</code>) typically show numbered items, 
+                but we can create more engaging designs:
+            </p>
+            
+            <div class="list-showcase">
+                <div class="list-container">
+                    <h3>Basic Numbered List</h3>
+                    <ol class="basic">
+                        <li>Step one in process</li>
+                        <li>Step two comes next</li>
+                        <li>Step three follows</li>
+                        <li>Final step completes</li>
+                    </ol>
+                </div>
+                
+                <div class="list-container">
+                    <h3>Numbered Cards</h3>
+                    <ol class="numbered-cards">
+                        <li>Premium feature with detailed description</li>
+                        <li>Another premium benefit explained here</li>
+                        <li>Special offer included in this package</li>
+                    </ol>
+                </div>
+                
+                <div class="list-container">
+                    <h3>Timeline List</h3>
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-date">2023 - Present</div>
+                            <div>Current position and responsibilities</div>
+                        </li>
+                        <li>
+                            <div class="timeline-date">2020 - 2023</div>
+                            <div>Previous role and achievements</div>
+                        </li>
+                        <li>
+                            <div class="timeline-date">2018 - 2020</div>
+                            <div>Earlier experience and growth</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="code-block">
+/* CSS for Numbered Cards */
+ol.numbered-cards {
+    list-style: none;
+    counter-reset: numbered-cards;
+}
+
+ol.numbered-cards li {
+    counter-increment: numbered-cards;
+    position: relative;
+    padding-left: 3.5rem;
+}
+
+ol.numbered-cards li::before {
+    content: counter(numbered-cards);
+    position: absolute;
+    left: 0;
+    /* Circle styling */
+}
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-magic"></i> Special List Types</h2>
+            <p class="description">
+                Creative implementations that combine functionality with visual appeal:
+            </p>
+            
+            <div class="list-showcase">
+                <div class="list-container">
+                    <h3>Checkbox List</h3>
+                    <ul class="checkbox-list">
+                        <li>Completed task with checkmark</li>
+                        <li>Another done item</li>
+                        <li>Pending but styled item</li>
+                        <li>Final checklist element</li>
+                    </ul>
+                </div>
+                
+                <div class="list-container">
+                    <h3>Mixed Content List</h3>
+                    <ul class="icon-list">
+                        <li><i class="fas fa-calendar"></i> <strong>Meeting:</strong> Monday 10am</li>
+                        <li><i class="fas fa-envelope"></i> <strong>Email:</strong> client@example.com</li>
+                        <li><i class="fas fa-phone"></i> <strong>Phone:</strong> (123) 456-7890</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> 123 Main St</li>
+                    </ul>
+                </div>
+                
+                <div class="list-container">
+                    <h3>Animated List</h3>
+                    <ul class="icon-list">
+                        <li style="animation: fadeIn 0.5s ease-in;"><i class="fas fa-spinner fa-spin"></i> Loading data...</li>
+                        <li style="animation: fadeIn 0.5s ease-in 0.2s;"><i class="fas fa-sync fa-spin"></i> Processing request</li>
+                        <li style="animation: fadeIn 0.5s ease-in 0.4s;"><i class="fas fa-cog fa-spin"></i> Finalizing setup</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <a href="#" class="footer-logo">DipeshSah</a>
+            <p class="footer-text">Building immersive experiences that don't just work—they sing, spark and stay memorable. Your vision + my tech sorcery = unstoppable!</p>
+            
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1FzbpcJvvT/?mibextid=qi2Omg" class="social-link"><i class="fab fa-facebook"></i></a>               
+                <a href="https://www.instagram.com/dipesh_shah_440?igsh=bGFkc3Zzc2E1Mzg3" class="social-link"><i class="fab fa-instagram"></i></a>  
+                <a href="https://x.com/Dipeshs5586193?s=09" class="social-link"><i class="fa-brands fa-twitter"></i></a>                             
+                <a href="https://github.com/Dipesh440" class="social-link">
+                    <i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/dipesh-sah-234b9b294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dipesh Sah. All rights reserved. | Designed with ♥ and code</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
